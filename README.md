@@ -68,6 +68,16 @@ mtrr: Pentium Pro MTRR support, 8 var ranges, 88 fixed ranges
 cpu0: apic clock running at 99MHz
 cpu0: mwait min=64, max=64, IBE
 <snip cpu1-3...>
+$ Unix Benchmark Utility v.0.3
+Copyright (C) July, 1999 PhysTech, Inc.
+Author: Sergei Viznyuk <sv@phystech.com>
+http://www.phystech.com/download/ubench.html
+OpenBSD 5.9 GENERIC.MP#1888 amd64
+Ubench CPU:   288530
+Ubench MEM:    37347
+--------------------
+Ubench AVG:   162938
+
 ```
 
 # Caveat
