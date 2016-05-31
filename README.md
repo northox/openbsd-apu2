@@ -68,6 +68,11 @@ mtrr: Pentium Pro MTRR support, 8 var ranges, 88 fixed ranges
 cpu0: apic clock running at 99MHz
 cpu0: mwait min=64, max=64, IBE
 <snip cpu1-3...>
+```
+# Performances
+Not the most ehaustive benchmark for a router: just to give a idea of where the apu2 stands:
+
+```
 $ Unix Benchmark Utility v.0.3
 Copyright (C) July, 1999 PhysTech, Inc.
 Author: Sergei Viznyuk <sv@phystech.com>
@@ -77,7 +82,6 @@ Ubench CPU:   288530
 Ubench MEM:    37347
 --------------------
 Ubench AVG:   162938
-
 ```
 
 # Caveat
