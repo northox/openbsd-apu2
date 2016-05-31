@@ -70,10 +70,11 @@ cpu0: mwait min=64, max=64, IBE
 <snip cpu1-3...>
 ```
 # Performances
-Not the most ehaustive benchmark for a router: just to give a idea of where the apu2 stands:
+Not the most exhaustive benchmark for a router: just to give a idea of where the apu2 stands:
 
 ```
-$ Unix Benchmark Utility v.0.3
+$ ubench
+Unix Benchmark Utility v.0.3
 Copyright (C) July, 1999 PhysTech, Inc.
 Author: Sergei Viznyuk <sv@phystech.com>
 http://www.phystech.com/download/ubench.html
