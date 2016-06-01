@@ -1,15 +1,19 @@
 # OpenBSD-APU2
-Basic config to create a WIFI router out of [PC Engine's APU2](http://pcengines.ch/apu2c4.htm) running OpenBSD >=5.9.
+This repo contains the necessary configs to create a WIFI router out of [PC Engine's APU2](http://pcengines.ch/apu2c4.htm) running OpenBSD >=5.9.
 
-The APU2 is a fanless board with 4 AMD64 CPU and 4GB or RAM - quite capable. We were tired of cheap, bulky routers with unknown security posture (crappy actually).
+The APU2 is a fanless board with an AMD GX-412TC SOC (4x amd64 CPU clocked at 998.30 MHz) with 4GB of RAM - quite capable... well, actually it's overkill for a router but anyway, it's cheaper then the alternatives. 
 
-# Instruction
+## Why? 
+
+Well frankly, we were tired of cheap, unreliable, inflexible routers with unknown (crappy) security posture. Our objective is to setup this thing once and forget about it - not a techytrip.
+
+## Instructions
 - The APU2 is setup as such and cost 245$can:
-  - board: [apu2c4](http://pcengines.ch/apu2c4.htm)
-  - wifi: [wle200nx](http://pcengines.ch/wle200nx.htm)
+  - board: [apu2c4](http://pcengines.ch/apu2c4.htm) - 3 1000baseT, 2 USB, 1 SATA, 2 mPCI, etc
+  - wifi: [wle200nx](http://pcengines.ch/wle200nx.htm) - A B G N*, 2 antenna
   - hd: [msata16d](http://pcengines.ch/msata16d.htm)
-- Follow [Elad's instruction](https://github.com/elad/openbsd-apu2) to install OpenBSD on the APU2.
-- The config files are self explanatory. If you don't know what it does... RTFM. OpenBSD's doc is quite simple and complete.
+- Follow [Elad's instructions](https://github.com/elad/openbsd-apu2) to install OpenBSD on the APU2.
+- The config files are pretty much self explanatory. Really, if you don't know what it does... RTFM or it's simply not for you. OpenBSD's doc is quite simple and complete.
 
 ```
 $ sysctl hw.sensors.km0.temp0
@@ -69,25 +73,23 @@ cpu0: apic clock running at 99MHz
 cpu0: mwait min=64, max=64, IBE
 <snip cpu1-3...>
 ```
-# Performances
-Not the most exhaustive benchmark for a router: just to give a idea of where the apu2 stands:
 
+## Performance
+ubench is not the most exhaustive benchmark for a router but it gives an idea of where the APU2 stands:
 ```
-$ ubench
-Unix Benchmark Utility v.0.3
-Copyright (C) July, 1999 PhysTech, Inc.
-Author: Sergei Viznyuk <sv@phystech.com>
-http://www.phystech.com/download/ubench.html
-OpenBSD 5.9 GENERIC.MP#1888 amd64
 Ubench CPU:   288530
 Ubench MEM:    37347
 --------------------
 Ubench AVG:   162938
 ```
 
-# Caveat
+## Caveats
 - 802.11n is not supported
 - still testing the stability - so far so good
 
-# License
+## License
 BSD
+
+## Authors
+Danny Fullerton - Mantor Organization
+Jean-Francois Rioux - Mantor Organization
