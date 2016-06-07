@@ -1,15 +1,15 @@
 # OpenBSD-APU2
 This repo contains the necessary configs to create a WIFI router out of [PC Engine's APU2](http://pcengines.ch/apu2c4.htm) running OpenBSD >=5.9.
 
-The APU2 is a fanless board with an AMD GX-412TC SOC (4x amd64 CPU clocked at 998.30 MHz) with 4GB of RAM - quite capable... well, actually it's overkill for a router but anyway, it's cheaper then the alternatives. 
+The APU2 is a fanless board with 4x 1Ghz CPUs and 4GB of RAM (AMD GX-412TC SOC, amd64 intruction set) - quite capable. Well, actually it's totally overkill for a router but anyway, it's still cheaper then the alternatives. 
 
 ## Why? 
 
-Well frankly, we were tired of cheap, unreliable, inflexible routers with unknown (crappy) security posture. Our objective is to setup this thing once and forget about it - not a techytrip.
+Well frankly, we were tired of unreliable, inpotent routers with unknown (crappy) security posture. Our objective was to setup this thing once and forget about it - not a techy-powertrip.
 
 ## Instructions
 - The APU2 is setup as such and cost 245$can:
-  - board: [apu2c4](http://pcengines.ch/apu2c4.htm) - 3 1000baseT, 2 USB, 1 SATA, 2 mPCI, etc
+  - board: [apu2c4](http://pcengines.ch/apu2c4.htm) - 4x 1Ghz, 4 GB RAM, 3 1000baseT, 2 USB, 1 SATA, 2 mPCI, etc
   - wifi: [wle200nx](http://pcengines.ch/wle200nx.htm) - A B G N*, 2 antenna
   - hd: [msata16d](http://pcengines.ch/msata16d.htm)
 - Follow [Elad's instructions](https://github.com/elad/openbsd-apu2) to install OpenBSD on the APU2.
@@ -84,12 +84,12 @@ Ubench AVG:   162938
 ```
 
 ## Caveats
-- 802.11n is not supported
+- 802.11n is not supported on OpenBSD
 - still testing the stability - so far so good
 
 ## License
 BSD
 
 ## Authors
-Danny Fullerton - Mantor Organization
-Jean-Francois Rioux - Mantor Organization
+- Danny Fullerton - Mantor Organization
+- Jean-Francois Rioux - Mantor Organization
