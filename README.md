@@ -75,12 +75,34 @@ cpu0: mwait min=64, max=64, IBE
 ```
 
 ## Performance
-ubench is not the most exhaustive benchmark for a router but it gives an idea of where the APU2 stands:
 ```
 Ubench CPU:   288530
 Ubench MEM:    37347
 --------------------
 Ubench AVG:   162938
+```
+
+```
+$ openssl speed md5 sha1 sha256 sha512 des des-ede3 aes-128-cbc aes-192-cbc aes-256-cbc rsa2048 dsa2048
+LibreSSL 2.3.2
+built on: date not available
+options:bn(64,64) rc4(8x,int) des(idx,cisc,16,int) aes(partial) idea(int) blowfish(idx) 
+compiler: information not available
+The 'numbers' are in 1000s of bytes per second processed.
+type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes
+md5               4565.65k    16729.20k    49299.48k    96037.93k   132775.72k
+sha1              4481.83k    15422.45k    40502.69k    68271.20k    86173.85k
+des cbc          11858.55k    12263.08k    12356.64k    12401.29k    12530.22k
+des ede3          4589.16k     4710.53k     4785.33k     4759.05k     4765.51k
+aes-128 cbc      14778.42k    15650.49k    16148.75k    44138.14k    44958.02k
+aes-192 cbc      12427.81k    13167.48k    13322.04k    37420.23k    38020.68k
+aes-256 cbc      10770.22k    11232.15k    11495.93k    32585.99k    32885.03k
+sha256            5399.91k    12679.80k    22259.16k    27965.75k    30307.68k
+sha512            4807.39k    19008.23k    29792.79k    41931.95k    47916.40k
+                  sign    verify    sign/s verify/s
+rsa 2048 bits 0.009785s 0.000316s    102.2   3168.6
+                  sign    verify    sign/s verify/s
+dsa 2048 bits 0.003073s 0.003696s    325.4    270.5
 ```
 
 ## Caveats
