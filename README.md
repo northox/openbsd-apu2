@@ -2,6 +2,7 @@
 This repo contains the necessary configs to create a WIFI router out of [PC Engine's APU2](http://pcengines.ch/apu2c4.htm) running OpenBSD >=5.9.
 
 The APU2 is a fanless board with 4x 1Ghz CPUs and 4GB of RAM (AMD GX-412TC SOC, amd64 intruction set) - quite capable. Well, actually it's totally overkill for a router but anyway, it's still cheaper then the alternatives. 
+![front panel open top](https://raw.githubusercontent.com/northox/openbsd-apu2/master/front-open.jpeg)
 
 ## Why? 
 
