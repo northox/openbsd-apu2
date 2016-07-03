@@ -14,35 +14,59 @@ Well frankly, we were tired of unreliable, inpotent routers with unknown (crappy
   - hd: [msata16d](http://pcengines.ch/msata16d.htm)
 - Follow [Elad's instructions](https://github.com/elad/openbsd-apu2) to install OpenBSD on the APU2.
 - The config files are pretty much self explanatory. Really, if you don't know what it does... RTFM or it's simply not for you. OpenBSD's doc is quite simple and complete.
+- Execute this for a status web page: `echo '*/5 * * * * /usr/local/sbin/update_webpage' >> /var/cron/tabs/root`
 
+## Status (update_webpage)
 ```
+$ uname -a
+OpenBSD barricade.mantor.org 5.9 GENERIC.MP#1888 amd64
 $ sysctl hw.sensors.km0.temp0
-hw.sensors.km0.temp0=65.38 degC
-$ top -nC 
-load averages:  1.02,  0.97,  0.95    barricade.mantor.org 21:53:22
-29 processes: 28 idle, 1 on processor  up 14:01
-CPU0 states:  0.1% user,  0.0% nice,  0.0% system,  0.2% interrupt, 99.7% idle
-CPU1 states:  0.0% user,  0.0% nice,  0.0% system,  0.1% interrupt, 99.9% idle
-CPU2 states:  0.0% user,  0.0% nice,  0.0% system,  0.1% interrupt, 99.9% idle
-CPU3 states:  0.0% user,  0.0% nice,  0.0% system,  0.0% interrupt,  100% idle
-Memory: Real: 32M/206M act/tot Free: 3739M Cache: 116M Swap: 0K/890M
+hw.sensors.km0.temp0=62.75 degC
+$ top -nC 666
+load averages:  0.62,  0.52,  0.56    barricade.mantor.org 13:15:01
+33 processes: 32 idle, 1 on processor  up 12 days, 22:27
+CPU0 states:  0.2% user,  0.0% nice,  0.1% system,  0.2% interrupt, 99.4% idle
+CPU1 states:  0.0% user,  0.0% nice,  0.1% system,  0.1% interrupt, 99.8% idle
+CPU2 states:  0.0% user,  0.0% nice,  0.1% system,  0.1% interrupt, 99.8% idle
+CPU3 states:  0.0% user,  0.0% nice,  0.0% system,  0.0% interrupt, 99.9% idle
+Memory: Real: 48M/247M act/tot Free: 3698M Cache: 123M Swap: 0K/890M
 
   PID USERNAME PRI NICE  SIZE   RES STATE     WAIT      TIME    CPU COMMAND
-25775 _unbound   2    0   15M   18M idle      kqread    0:03  0.00% unbound -c /var/unbound/etc/unbound.conf
-27903 _ntp       2  -20 1324K 1680K sleep     poll      0:02  0.00% ntpd: ntp engine
-    1 root      10    0  460K  556K idle      wait      0:01  0.00% /sbin/init
-16962 _pflogd    4    0  684K  424K sleep     bpf       0:01  0.00% pflogd: [running] -s 160 -i pflog0 -f /var/log/pflog
-23489 _dhcp      2    0  784K  676K sleep     poll      0:00  0.00% dhclient: em0
-25966 root       2    0  908K 1452K idle      select    0:00  0.00% /usr/sbin/sshd
-11277 root       2    0  772K 1152K idle      poll      0:00  0.00% /usr/sbin/cron
-20998 _syslogd   2    0 1064K 1428K sleep     kqread    0:00  0.00% /usr/sbin/syslogd
-12137 root       2  -20  836K 1684K idle      poll      0:00  0.00% /usr/sbin/ntpd
-26146 root       2    0 1204K 2316K idle      kqread    0:00  0.00% /usr/sbin/httpd
-18485 _smtpq     2    0 1568K 2164K idle      kqread    0:00  0.00% smtpd: queue
-29389 root       2    0 1064K 1324K idle      netio     0:00  0.00% syslogd: [priv]
-29919 _dhcp      2    0  720K 1412K idle      poll      0:00  0.00% /usr/sbin/dhcpd em1 em2 athn0
-12300 root       2    0 1632K 2120K idle      kqread    0:00  0.00% /usr/sbin/smtpd
-$ dmesg
+14875 _unbound   2    0   27M   32M sleep     kqread    1:03  0.00% unbound -c /var/unbound/etc/unbound.conf
+31702 _ntp       2  -20 1300K 1656K sleep     poll      0:50  0.00% ntpd: ntp engine
+30018 _pflogd    4    0  688K  508K sleep     bpf       0:25  0.00% pflogd: [running] -s 160 -i pflog0 -f /var/log/pflog
+26667 root       2    0  916K 1440K idle      select    0:11  0.00% /usr/sbin/sshd
+ 4198 _syslogd   2    0 1060K 1444K sleep     kqread    0:10  0.00% /usr/sbin/syslogd
+27374 root       2    0  760K 1104K sleep     poll      0:09  0.00% /usr/sbin/cron
+ 2301 _dhcp      2    0  768K  680K idle      poll      0:03  0.00% dhclient: em0
+    1 root      10    0  464K  564K idle      wait      0:02  0.00% /sbin/init
+ 2454 _dhcp      2    0  708K 1400K idle      poll      0:01  0.00% /usr/sbin/dhcpd athn0
+15368 root       2    0 3552K 3292K idle      poll      0:01  0.00% sshd: northox [priv]
+30674 _smtpd     2    0 1676K 2784K idle      kqread    0:00  0.00% smtpd: pony express
+  497 root       2    0 1576K 2180K idle      kqread    0:00  0.00% /usr/sbin/smtpd
+ 2020 _smtpq     2    0 1676K 2380K idle      kqread    0:00  0.00% smtpd: queue
+30436 _smtpd     2    0 1540K 2364K idle      kqread    0:00  0.00% smtpd: lookup
+ 2118 _smtpd     2    0 1648K 2324K idle      kqread    0:00  0.00% smtpd: control
+16322 root       2    0 1060K 1268K idle      netio     0:00  0.00% syslogd: [priv]
+15619 root       2    0  624K  608K idle      netio     0:00  0.00% pflogd: [priv]
+16011 _smtpd     2    0 1308K 2084K idle      kqread    0:00  0.00% smtpd: scheduler
+24867 root       2  -20  804K 1664K idle      poll      0:00  0.00% /usr/sbin/ntpd
+ 1856 root       2    0  648K  548K idle      poll      0:00  0.00% dhclient: em0 [priv]
+  252 root       2    0  864K 1876K idle      kqread    0:00  0.00% /usr/sbin/httpd
+ 1211 _smtpd     2    0 1376K 1988K idle      kqread    0:00  0.00% smtpd: klondike
+31513 www        2    0  884K 1884K idle      kqread    0:00  0.00% httpd: server
+11225 www        2    0  744K 1616K idle      kqread    0:00  0.00% httpd: logger
+18802 _ntp       2    0  688K 1424K idle      poll      0:00  0.00% ntpd: dns engine
+ 7354 root       3    0  336K 1120K idle      ttyin     0:00  0.00% /usr/libexec/getty std.115200 tty00
+$ list-dhcpd-leases
+192.168.1.16  55:f9:35:43:32:11  "iPad"
+192.168.1.17  78:44:87:13:56:6e  "android-35375e65e664b13d"
+192.168.1.21  74:86:23:1d:a6:61  "laserbeak"
+$ ^D
+```
+
+## dmesg
+```
 OpenBSD 5.9 (GENERIC.MP) #1888: Fri Feb 26 01:20:19 MST 2016
     deraadt@amd64.openbsd.org:/usr/src/sys/arch/amd64/compile/GENERIC.MP
 real mem = 4261076992 (4063MB)
@@ -105,9 +129,9 @@ rsa 2048 bits 0.009785s 0.000316s    102.2   3168.6
 dsa 2048 bits 0.003073s 0.003696s    325.4    270.5
 ```
 
-## Caveats
-- athn does not support 802.11n - iwn/iwm does in 5.9
-- 802.11ac is not supported on OpenBSD 5.9
+## Caveats (5.9)
+- athn does not support 802.11n - iwn/iwm does but not in AP mode
+- 802.11ac is not supported
 - still testing the stability - so far so good
 
 ## License
