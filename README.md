@@ -106,7 +106,8 @@ dsa 2048 bits 0.003073s 0.003696s    325.4    270.5
 ```
 
 ## Caveats
-- 802.11n is not supported on OpenBSD
+- athn does not support 802.11n - iwn/iwm does in 5.9
+- 802.11ac is not supported on OpenBSD 5.9
 - still testing the stability - so far so good
 
 ## License
