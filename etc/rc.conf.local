@@ -1,4 +1,4 @@
-dhcpd_flags=em1 em2 athn0
+dhcpd_flags=athn0
 httpd_flags=
 sndiod_flags=NO
 unbound_flags=
