@@ -1,5 +1,5 @@
 inet 192.168.1.2 255.255.255.0 192.168.1.255
-media autoselect mode 11b mediaopt hostap
+media autoselect mediaopt hostap
 nwid "your wifi name"
 wpakey "your wifi secret key"
 wpaprotos wpa2
