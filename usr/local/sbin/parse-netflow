@@ -1,0 +1,16 @@
+#!/bin/sh
+TMP1=`mktemp`
+TMP2=`mktemp`
+
+/usr/local/bin/flowd-reader /var/log/flowd | awk '{print $13}' | grep -Ev '192.168.1.|0.0.0.0' | sed -E 's/\[(.*)]:[0-9]*$/\1/' | sort -u > $TMP1
+
+for i in `cat $TMP1`; do 
+  IP=`host $i`
+  if [ $? -eq 0 ]; then
+    echo $IP | grep -v 'has no PTR record' | sed 's/.*domain name pointer //' >> $TMP2
+  fi
+done
+
+awk -F '.' '{print $(NF-2)"."$(NF-1)}' $TMP2 | sort | uniq -c | sort -r
+
+rm $TMP1 $TMP2

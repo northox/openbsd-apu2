@@ -1,0 +1,4 @@
+#!/bin/sh
+grep -E 'GET|POST|UPDATE' /var/log/relayd | awk -F '[' '{print $3}' | awk -F ']' '{print $1}' | awk -F ':' '{print $1}' | awk -F ';' '{print $1}' | sort | uniq -c | sort -r
+
+#| sed 's/^[ \t]*//;s/[ \t\n\r]*$//' #| uniq -c | sort -r
