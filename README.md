@@ -11,7 +11,7 @@ Well frankly, we were tired of unreliable, inpotent routers with unknown (crappy
 
 ## Instructions
 - The APU2 is setup as such and cost 245$cad:
-  - board: [apu2c4](http://pcengines.ch/apu2c4.htm) - 4x 1Ghz, 4 GB RAM, 3 1000baseT, 2 USB, 1 SATA, 2 mPCI, etc
+  - board: [apu2c4](http://pcengines.ch/apu2c4.htm) - 4x 1Ghz, 4 GB RAM, 3 1000baseT, 2 USB3, 1 SATA, 2 mPCI, etc
   - wifi: [wle200nx](http://pcengines.ch/wle200nx.htm) - A B G N*, 2 antenna
   - hd: [msata16d](http://pcengines.ch/msata16d.htm)
 - Follow [Elad's instructions](https://github.com/elad/openbsd-apu2) to install OpenBSD on the APU2.
@@ -120,7 +120,7 @@ md5               4565.65k    16729.20k    49299.48k    96037.93k   132775.72k
 sha1              4481.83k    15422.45k    40502.69k    68271.20k    86173.85k
 des cbc          11858.55k    12263.08k    12356.64k    12401.29k    12530.22k
 des ede3          4589.16k     4710.53k     4785.33k     4759.05k     4765.51k
-aes-128 cbc      14778.42k    15650.49k    16148.75k    44138.14k    44958.02k
+aes-128 cbc      14778.42k    15650.49k    16148.75k    44138.14k    44958.02k
 aes-192 cbc      12427.81k    13167.48k    13322.04k    37420.23k    38020.68k
 aes-256 cbc      10770.22k    11232.15k    11495.93k    32585.99k    32885.03k
 sha256            5399.91k    12679.80k    22259.16k    27965.75k    30307.68k
@@ -131,8 +131,8 @@ rsa 2048 bits 0.009785s 0.000316s    102.2   3168.6
 dsa 2048 bits 0.003073s 0.003696s    325.4    270.5
 ```
 
-## Caveats (5.9 - 6.0)
-- athn does not support 802.11n - iwn/iwm does but not in AP mode
+## Caveats (6.1)
+- athn limited 802.11n performance
 - 802.11ac is not supported
 
 ## License
