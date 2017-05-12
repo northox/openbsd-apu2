@@ -1,0 +1,3 @@
+#!/bin/sh
+FILES=`find etc usr/ var -type f`
+for i in $FILES; do doas diff -u ./$i /$i ; done
