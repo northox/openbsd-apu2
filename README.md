@@ -4,7 +4,7 @@ This repo contains the necessary configs to create a WIFI router out of [PC Engi
 The APU2 is a fanless board with 4x 1Ghz CPUs and 4GB of RAM (AMD GX-412TC SOC, amd64 intruction set) - quite capable. Well, actually it's totally overkill for a router but anyway, it's still cheaper then the alternatives. Oh and it use an open source firmware: [coreboot](https://www.coreboot.org).
 ![front panel open top](https://raw.githubusercontent.com/northox/openbsd-apu2/master/front-open.jpeg)
 
-It's stable. We've been using it for a few months now and had very few hiccups. The biggest limitation is the support for 802.11n and ac.
+It's stable. We've been using it for a few months now and had very few hiccups. The biggest limitation is the support for 802.11ac and poor performance of 802.11n.
 
 ## Why? 
 Well frankly, we were tired of unreliable, inpotent routers with unknown (crappy) security posture. Our objective was to setup this thing once and forget about it - not a techy-powertrip.
@@ -12,7 +12,7 @@ Well frankly, we were tired of unreliable, inpotent routers with unknown (crappy
 ## Instructions
 - The APU2 is setup as such and cost 245$cad:
   - board: [apu2c4](http://pcengines.ch/apu2c4.htm) - 4x 1Ghz, 4 GB RAM, 3 1000baseT, 2 USB3, 1 SATA, 2 mPCI, etc
-  - wifi: [wle200nx](http://pcengines.ch/wle200nx.htm) - A B G N*, 2 antenna
+  - wifi: [wle200nx](http://pcengines.ch/wle200nx.htm) - A B G N, 2 antenna
   - hd: [msata16d](http://pcengines.ch/msata16d.htm)
 - Follow [Elad's instructions](https://github.com/elad/openbsd-apu2) to install OpenBSD on the APU2.
 - The config files are pretty much self explanatory. Really, if you don't know what it does... RTFM or it's simply not for you. OpenBSD's doc is quite simple and complete.

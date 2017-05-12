@@ -2,6 +2,7 @@
 $top = qx(top -nC 666);
 $top =~ s/\n*$/\n/;
 $uname = qx(uname -a);
+$date = qx(date);
 $temp = qx(sysctl hw.sensors.km0.temp0);
 $lease = `awk '/{/{if(x)print x;x=""}{gsub(";","");x=(!x)?\$0:x" "\$0}END{print x}' /var/db/dhcpd.leases | awk '{print \$2" "\$16" "\$20}' | sort -u | column -t`;
 
@@ -11,6 +12,7 @@ $out = <<EOF;
 <div style="width:1000px;height:100%;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;"><pre>
 EOF
 $out .="\$ uname -a\n$uname";
+$out .="\$ date\n$date";
 $out .="\$ sysctl hw.sensors.km0.temp0\n$temp";
 $out .="\$ top -nC 666\n$top";
 $out .="\$ list-dhcpd-leases\n$lease";
