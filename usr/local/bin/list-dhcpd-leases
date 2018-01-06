@@ -1,0 +1,4 @@
+#!/bin/sh
+awk '/{/{if(x)print x;x=""}{gsub(";","");x=(!x)?$0:x" "$0}END{print x}' /var/db/dhcpd.leases | \
+sed -E -n -e 's/lease ([0-9.]+).*ethernet ([0-9a-f:]+)(.*hostname "([^"]*)" }|.*([^hostname].)* })/\1 \2 \4/p' | \
+sort -u | column -t

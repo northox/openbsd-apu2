@@ -4,7 +4,7 @@ $top =~ s/\n*$/\n/;
 $uname = qx(uname -a);
 $date = qx(date);
 $temp = qx(sysctl hw.sensors.km0.temp0);
-$lease = `awk '/{/{if(x)print x;x=""}{gsub(";","");x=(!x)?\$0:x" "\$0}END{print x}' /var/db/dhcpd.leases | awk '{print \$2" "\$16" "\$20}' | sort -u | column -t`;
+$lease = `/usr/local/bin/list-dhcpd-leases`;
 
 $out = <<EOF;
 <html><head><title>Router status</title></head>
