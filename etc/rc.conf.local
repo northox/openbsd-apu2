@@ -1,4 +1,5 @@
-dhcpd_flags=athn0
+dhcpd_flags=em1
 httpd_flags=
+pkg_scripts=flowd
 sndiod_flags=NO
 unbound_flags=
