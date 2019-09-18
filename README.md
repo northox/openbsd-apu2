@@ -7,7 +7,7 @@ The APU2 is a fanless board with 4x 1Ghz CPUs and 4GB of RAM (AMD GX-412TC SOC, 
 It's stable. We've been using it for a few months now and had very few hiccups. The biggest limitation is the support for 802.11ac and poor performance of 802.11n.
 
 ## Why? 
-Well frankly, we were tired of unreliable, inpotent routers with unknown (crappy) security posture. Our objective was to setup this thing once and forget about it - not a techy-powertrip.
+Well frankly, we were tired of unreliable, inpotent routers with unknown ([crappy](https://www.helpnetsecurity.com/2019/09/17/vulnerabilities-iot-devices/)) security posture. Our objective was to setup this thing once and forget about it - not a techy-powertrip.
 
 ## Instructions
 - The APU2 is setup as such and cost 245$cad:
