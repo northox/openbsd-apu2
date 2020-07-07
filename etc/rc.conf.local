@@ -1,5 +1,7 @@
 dhcpd_flags=em1
 httpd_flags=
 pkg_scripts=flowd
+sensorsd_flags=-c 5
 sndiod_flags=NO
 unbound_flags=
+vmd_flags=
