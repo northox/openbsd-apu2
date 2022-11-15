@@ -15,6 +15,7 @@ Well frankly, we were tired of unreliable, inpotent routers with unknown ([crapp
   - wifi: [wle200nx](http://pcengines.ch/wle200nx.htm) - A B G N, 2 antenna
   - hd: [msata16d](http://pcengines.ch/msata16d.htm)
 - Follow [Elad's instructions](https://github.com/elad/openbsd-apu2) to install OpenBSD on the APU2.
+  - Set the proper console to boot from installation media: wintin the boot shell `stty com0 115200` `set tty com0`
 - The config files are pretty much self explanatory. Really, if you don't know what it does... RTFM or it's simply not for you. OpenBSD's doc is quite simple and complete.
 - Execute this for a status web page: `echo '*/5 * * * * /usr/local/sbin/update_webpage' >> /var/cron/tabs/root`
 
